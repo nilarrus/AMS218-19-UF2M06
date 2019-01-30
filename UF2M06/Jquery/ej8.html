@@ -1,17 +1,17 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <!--<script type="text/javascript" src="jquery-3.2.1.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript">
       /*Asignar el evento click:
       *input(listaGeneral) => crearJuegoLista
       *input(listaAnual) => asignarListaYear
       */
       $(function(){
-          $("input[name='listaGeneral']").on(crearJuegoLista);
-          $("input[name='listaAnual']").on(asignarListaYear);
+          $("input[name='listaGeneral']").on("click",crearJuegoLista);
+          $("input[name='listaAnual']").on("click",asignarListaYear);
       });
-
       /*
       *Recorre el array asociativo juegos y crea un nuevo elemento de la lista
       * en el div de Listado de juegos general.
@@ -29,9 +29,15 @@
           'Final Fantasy XV':'2016'
         };
         //tu código empieza aquí 
-        $.each(juegos,function(index,value){
-            
-        });
+        //Bucle
+        for (var titol in juegos) {
+          //$("<li>").data("any",juegos[titol]).text(titol).appendTo("ul:first");
+          var myLi = $("<li>");//element li
+          myLi.data("any",juegos[titol]);//afegim el data 
+          myLi.text(titol);//afegim el text = titol del joc
+          myLi.appendTo("ul:first");//afegim al cos del html en la posicio que volem         
+        }
+                
       }
 
       /*
@@ -39,6 +45,11 @@
       * de los elementos crea un nuevo elemento en la lista del año que toque
       */
       function asignarListaYear(){
+        var llistaLi = $("li");
+        for (var i = 0; i < llistaLi.length; i++) {
+          const element = llistaLi[i];
+          
+        }
       }
     </script>
   </head>
