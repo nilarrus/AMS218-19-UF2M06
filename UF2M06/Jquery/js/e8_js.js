@@ -1,9 +1,3 @@
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <!--<script type="text/javascript" src="jquery-3.2.1.js"></script>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript">
       /*Asignar el evento click:
       *input(listaGeneral) => crearJuegoLista
       *input(listaAnual) => asignarListaYear
@@ -39,45 +33,25 @@
         }
                 
       }
-
       /*
       *Recorre la lista general y consultando la información guardada en data
       * de los elementos crea un nuevo elemento en la lista del año que toque
       */
       function asignarListaYear(){
+        alert("asignar lista year");
         var llistaLi = $("li");
         for (var i = 0; i < llistaLi.length; i++) {
-          const element = llistaLi[i];
+          var element = llistaLi[i];
+          if(element.data()=="2018"){
+            alert("2018");
+          }
+          if(element.data()=="2017"){
+            alert("2017");
+          }
+          if(element.data()=="2016"){
+            alert("2016");
+          }
+
           
         }
       }
-    </script>
-  </head>
-  <body>
-    <h2>Usando el data en jQuery</h2>
-    <div>
-      <h3>Listado de juegos General</h3>
-      <ul>
-      </ul>
-    </div>
-    <div>
-      <h3>Listado de juegos en <span>2018</span></h3>
-      <ul>
-      </ul>
-    </div>
-    <div>
-      <h3>listado de juegos del <span>2017</span></h3>
-      <ul>
-      </ul>
-    </div>
-    <div>
-      <h3>listado de juegos del <span>2016</span></h3>
-      <ul>
-      </ul>
-    </div>
-    <div>
-      <input type="button" name="listaGeneral" value="Crear listado general"/>
-      <input type="button" name="listaAnual" value="Crear listado por año"/>
-    </div>
-  </body>
-</html>
